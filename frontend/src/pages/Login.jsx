@@ -9,6 +9,7 @@ export default function Login() {
         <h1 className="text-2xl font-bold text-center">Log in</h1>
         <form className="space-y-4">
           <Input placeholder="Enter your email" type="email" />
+          <Input placeholder="Enter your phone number" type="phone number" />
           <Input placeholder="Enter your password" type="password" />
           <div className="text-right text-sm text-gray-600 hover:underline cursor-pointer">
             Forgot password?
