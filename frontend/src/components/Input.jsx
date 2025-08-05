@@ -24,7 +24,6 @@ const Input = ({ placeholder, type = "text", ...props }) => {
               padding: '0',
               margin: '0 0 0 12px'
             }}
-            tabIndex={-1}
           >
             {showPassword ? (
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
