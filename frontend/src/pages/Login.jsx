@@ -47,7 +47,7 @@ export default function Login() {
             />
           </div>
             {/* Toggle Buttons */}
-<div className="flex justify-center mt-12 mb-8" style={{ transform: "translateY(-35px)" }}>
+<div className="flex justify-center mt-12 mb-8 -translate-y-[35px]">
   <div className="bg-[#EBDBC4] rounded-full w-[500px] h-[60px] flex items-center relative shadow-inner">
     
     {/* White pill background - positioned for Log in tab */}
