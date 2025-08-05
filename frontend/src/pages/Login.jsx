@@ -39,7 +39,7 @@ export default function Login() {
         <div className="w-1/2 flex flex-col items-center">
 
           {/* Logo */}
-          <div className="pt-2 pb-2" style={{ transform: "translateY(-50px)" }}>
+          <div className="pt-2 pb-2 transform translate-y-[-50px]">
             <img 
               src="logo.png" 
               alt="Medway Logo" 
