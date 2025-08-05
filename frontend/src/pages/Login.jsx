@@ -63,7 +63,7 @@ export default function Login() {
     {/* Sign up tab */}
     <a
       href="/sign"
-      className="flex-1 text-[#065F2B] text-[30px] font-bold text-center py-2 hover:text-[#065F2B] underline z-10 relative"
+      className="flex-1 text-[#065F2B] text-[30px] font-bold text-center py-2 hover:text-[#065F2B] z-10 relative"
     >
       Sign up
     </a>
