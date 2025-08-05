@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+
 import Input from "../components/Input";
 import Button from "../components/Button";
 
@@ -6,6 +9,7 @@ import Button from "../components/Button";
 export default function Login() {
   const [formData, setFormData] = useState({
     email: "",
+
     phone: "",
     password: "",
   });
@@ -16,6 +20,7 @@ export default function Login() {
       [e.target.name]: e.target.value,
     }));
   };
+
 
   const handleLogin = (e) => {
     e.preventDefault();
