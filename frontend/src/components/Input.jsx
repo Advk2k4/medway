@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 
@@ -12,6 +13,7 @@ const Input = ({ placeholder, type = "text", ...props }) => {
           <input
             type={showPassword ? "text" : "password"}
             placeholder={placeholder}
+
             className="flex-1 border-0 focus:outline-none bg-transparent text-gray-700 placeholder-gray-500 text-[20px]"
             {...props}
           />
@@ -46,11 +48,13 @@ const Input = ({ placeholder, type = "text", ...props }) => {
   }
 
   return (
+
     <div className="relative w-full mt-[2px]">
       <input
         type={type}
         placeholder={placeholder}
         className="border-0 border-b-2 border-[#065F2B] py-2 px-2 focus:outline-none focus:border-[#065F2B] w-full bg-transparent text-gray-700 placeholder-gray-500 text-[20px] "
+
         {...props}
       />
     </div>

@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
-
 import Input from "../components/Input";
 import Button from "../components/Button";
+
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -20,15 +19,10 @@ export default function Login() {
     }));
   };
 
-  const handleLogin = async (e) => {
+
+  const handleLogin = (e) => {
     e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, formData.email, formData.password);
-      alert("Login successful!");
-      // Redirect or navigate to dashboard here if needed
-    } catch (error) {
-      alert(error.message);
-    }
+    alert("Login functionality would work with Firebase integration!");
   };
 
   return (
@@ -56,6 +50,7 @@ export default function Login() {
             />
           </div>
             {/* Toggle Buttons */}
+
 <div className="flex justify-center mt-12 mb-8 -translate-y-[41px]">
   <div className="bg-[#EBDBC4] rounded-full w-[500px] h-[60px] flex items-center relative shadow-inner">
     
@@ -80,7 +75,9 @@ export default function Login() {
 </div>
 
           {/* Form Inputs */}
+
           <div className="w-[75%] max-w-md mt-[35px] px-[47px] space-y-[45px] ">
+
             <form onSubmit={handleLogin} className="space-y-[65px]">
               <Input
                 placeholder="Enter your phone number"
