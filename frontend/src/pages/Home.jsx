@@ -4,7 +4,7 @@ import Button from "../components/Button";
 export default function Home() {
   return (
     <Container>
-      <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-white">
+      <div className="flex flex-col md:flex-row items-center justify-between min-h-screen bg-[#F7F7F7]">
         {/* Left Side */}
         <div className="max-w-xl space-y-6 p-6">
           <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-gray-900">
@@ -28,7 +28,7 @@ export default function Home() {
         {/* Right Side */}
         <div className="hidden md:flex w-1/2 justify-center items-center">
         <img
-            src="/doctor-waiting-illustration.png"
+            src="home.png"
             alt="Doctor waiting room"
             className="w-[90%] max-w-md h-auto object-contain"
         />
