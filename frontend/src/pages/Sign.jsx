@@ -81,7 +81,7 @@ export default function Sign() {
                     {/* Log in tab */}
                     <a
                       href="/login"
-                      className="flex-1 text-[#065F2B] text-[30px] font-extrabold text-center z-10"
+                      className="flex-1 text-[#065F2B] text-[30px] font-extrabold text-center z-10 no-underline"
                     >
                       Log in
                     </a>
@@ -139,11 +139,11 @@ export default function Sign() {
                   {/* Button */}
                   <div className="mt-2">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-[#F7F7F7] rounded-full transform translate-x-2 translate-y-2"></div>
+                      <div className="absolute inset-0 bg-[#065F2B] text-black rounded-full transform translate-x-2 translate-y-2"></div>
                       <Button
                         type="submit"
                         variant="primary"
-                        className="text-[25px] font-black"
+                        className= "text-[25px]  bg-[#065F2B] text-[#F7F7F7]" 
                       >
                         Sign Up
                       </Button>
