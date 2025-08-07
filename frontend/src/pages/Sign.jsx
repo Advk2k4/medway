@@ -47,18 +47,18 @@ export default function Sign() {
           style={{ transform: "translate(700px,30px)" }}
         >
           <img
-            src="/medwaylogo.png"
+            src="logo.png"
             alt="Medway Logo"
             className="w-[700px] h-auto object-contain"
           />
         </div>
 
         {/* Container */}
-        <div className="w-full flex rounded-lg overflow-hidden shadow-xl bg-white py-12 px-6 mt-10">
+        <div className="w-full flex rounded-lg overflow-hidden bg-white py-12 px-6 mt-10">
           {/* Left Image */}
           <div className="w-1/2 bg-[#F7F7F7] flex items-center justify-center">
             <img
-              src="/signup.png"
+              src="login.png"
               alt="Signup illustration"
               className="w-[90%] h-[90%] object-contain"
             />
@@ -73,7 +73,7 @@ export default function Sign() {
               <div className="w-full" style={{ width: "500px" }}>
                 {/* Toggle Buttons */}
                 <div className="flex justify-center mt-4 mb-8" style={{ transform: "translateY(-50px)" }}>
-                  <div className="relative w-[375px] h-[62px] bg-[#EBDBC4] rounded-full flex items-center justify-between px-2 shadow-inner border border-[#EBDBC4]">
+                  <div className="relative w-[375px] h-[62px] bg-[#EBDBC4] rounded-full flex items-center justify-between px-2 border border-[#EBDBC4]">
                     
                     {/* Log in */}
                     <a
@@ -85,7 +85,7 @@ export default function Sign() {
 
                     {/* Sign up (active) */}
                     <div className="flex-1 relative flex justify-center items-center z-10">
-                      <div className="absolute w-[180px] h-[56px] bg-[#F7F7F7] rounded-full shadow-md z-0 transition-all duration-300 ease-in-out"></div>
+                      <div className="absolute w-[180px] h-[56px] bg-[#F7F7F7] rounded-full z-0 transition-all duration-300 ease-in-out"></div>
                       <div className="relative text-[#065F2B] text-[22px] font-extrabold text-center z-10">
                         Sign up
                       </div>
