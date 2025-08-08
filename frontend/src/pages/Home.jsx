@@ -1,82 +1,132 @@
 import Container from "../components/Container";
-import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <Container>
-      {/* ✅ Login Button */}
-      <div className="absolute top-6 right-6 z-50" style={{transform: 'translateY(25px) translateX(1350px)'}}>
-        <Link to="/login">
-          <button className="!w-[80px] !h-[50px] bg-[#065F2B] text-[#F7F7F7] px-6 py-2 rounded-full text-sm font-medium hover:bg-[#054d23] transition duration-200">
-            Log in
-          </button>
-        </Link>
-      </div>
-      <div className="relative w-full bg-[#F7F7F7] min-h-screen px-8 pt-10 pb-4">
-        {/* Logo + Headline wrapper */}
-        <div className="flex flex-col items-start space-y-8">
+      {/* Page wrapper */}
+      <div className="w-full bg-[#F7F7F7] min-h-screen">
+        {/* Log in pinned to the viewport (extreme top-right) */}
+        <div className="absolute top-[50px] right-[40px]">
+          <Link to="/login" aria-label="Log in">
+            <button className="h-[50px] w-[96px] bg-[#065F2B] text-[#F7F7F7] rounded-full text-sm font-medium hover:bg-[#054d23] transition">
+              Log in
+            </button>
+          </Link>
+        </div>
+
+        {/* Hero content */}
+        <div className="mx-auto max-w-[1280px] px-8 pt-10 pb-12 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
           
-          {/* Logo */}
-          <img
-            src="/logo.png"
-            alt="MedWay Logo"
-            className="w-[332px] h-auto"
-          />
+          {/* LEFT*/}
+          <div className="md:col-span-7 -ml-[50px]">
+            {/* Logo */}
+            <img
+              src="/logo.png"
+              alt="MedWay"
+              className="w-[400px] h-auto select-none -ml-[50px]"
+              draggable="false"
+            />
 
-          {/* Headline and Subtext */}
-          <div style={{ transform: 'translateY(-50px) translateX(25px)' }}>
-            <h1 className="text-[90px] leading-tight text-[#283B3F]" style={{ fontWeight: "light" }}>
-              <div>See your doctor.</div>
-              <div className="text-[#065F2B] text-[100px]" style={{ fontWeight: "bold" }}>
-                Not the waiting room.
-              </div>
-            </h1>
+            {/* Headline + subtext */}
+            <div>
+              <h1 className="text-[#283B3F] leading-tight">
+                <div className="text-[90px]" style={{ fontWeight: "light" }}>
+                  See your doctor.
+                </div>
+                <div
+                  className="text-[#065F2B] text-[100px] mt-1"
+                  style={{ fontWeight: "bold" }}
+                >
+                  Not the waiting room.
+                </div>
+              </h1>
 
-            <p className="text-gray-600 text-[25px] leading-relaxed max-w-xl" style={{ transform: 'translateY(-40px)' }}>
-              Book, track, and walk in just in time — no more waiting for hours at a clinic.
-            </p>
-          </div>
-        </div>
-
-        {/* Button Grid */}
-        <div className="transform translate-y-[-50px] translate-x-[25px]">
-          <div className="w-full max-w-[750px] flex justify-between items-start gap-[30px]">
-            {/* Left Column */}
-            <div className="flex flex-col gap-[40px]">
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#065F2B] text-[#F7F7F7] hover:bg-[#054d23] rounded-[12px]">
-                Book online
-              </Button>
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#EBDBC4] text-[#283B3F] hover:bg-[#d6c6ad] rounded-[12px]">
-                Family mode
-              </Button>
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#065F2B] text-[#F7F7F7] hover:bg-[#054d23] rounded-[12px]">
-                Digital Rx
-              </Button>
+              <p className="text-gray-600 text-[25px] leading-relaxed max-w-xl mt-3">
+                Book, track, and walk in just in time — no more waiting for hours at a clinic.
+              </p>
             </div>
 
-            {/* Right Column */}
-            <div className="flex flex-col gap-[40px]">
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#EBDBC4] text-[#283B3F] hover:bg-[#d6c6ad] rounded-[12px]">
-                Leave alert
-              </Button>
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#065F2B] text-[#F7F7F7] hover:bg-[#054d23] rounded-[12px]">
-                Track queue
-              </Button>
-              <Button className="!w-[360px] !h-[131px] text-[24px] font-bold bg-[#EBDBC4] text-[#283B3F] hover:bg-[#d6c6ad] rounded-[12px]">
-                Health profile
-              </Button>
+            {/* Left column wrapper */}
+            <div className="relative w-full">
+              {/* Features grid */}
+<div className="mx-auto inline-grid grid-cols-[auto_auto_auto_auto] gap-x-[25px] gap-y-2">
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Book online</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[140px]">
+      Skip calls, book instantly.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Track queue</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px]">
+      Live position and wait updates.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Leave on time</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      Smart alert when it's time to go.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Digital Rx</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      Save and share securely.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Family dashboard</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      Manage multiple family profiles.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Health profile</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      All your data in one place.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Medicine reminders</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      Never miss your medicine schedule.
+    </p>
+  </div>
+
+  <div>
+    <h3 className="text-lg font-bold text-[#283B3F] whitespace-nowrap">Lab test results</h3>
+    <p className="mt-2 text-base text-gray-700 max-w-[180px] whitespace-normal">
+      View your lab results.
+    </p>
+  </div>
+</div>
+
+
+              {/* CTA aligned with left column */}
+              <Link to="/login" className="block mt-10">
+                <button className="w-[800px] h-[56px] bg-[#065F2B] text-[#F7F7F7] rounded-[22px] text-[18px] font-semibold hover:bg-[#054d23] transition duration-200">
+                  Get started
+                </button>
+              </Link>
             </div>
           </div>
-        </div>
 
-        {/* Right Side Image */}
-        <div className="w-[250px] md:w-1/2 flex justify-center md:justify-end items-center mt-10 md:mt-0 transform translate-x-[1000px] translate-y-[-610px]">
-          <img
-            src="/home.png"
-            alt="Person using healthcare app on mobile"
-            className="max-w-[600px] h-[600px] object-contain"
-          />
+         {/* RIGHT*/}
+<div className="md:col-span-5 flex justify-end items-start">
+  <img
+    src="/home3.png"
+    alt="Using MedWay on mobile"
+    className="relative w-full h-full max-w-[700px] h-[520px] top-[-480px] right-[-140px] -mt-[250px]"
+    draggable="false"
+  />
+</div>
         </div>
       </div>
     </Container>

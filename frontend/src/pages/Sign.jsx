@@ -21,7 +21,6 @@ export default function Sign() {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
