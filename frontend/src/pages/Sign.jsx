@@ -44,12 +44,12 @@ export default function Sign() {
         {/* Logo */}
         <div
           className="absolute top-0 right-0 -mt-16 z-10 w-1/2 flex justify-end"
-          style={{ transform: "translate(700px,30px)" }}
+          style={{ transform: "translate(700px,12px)" }}
         >
           <img
             src="logo.png"
             alt="Medway Logo"
-            className="w-[700px] h-auto object-contain"
+            className="w-[642px] h-auto object-contain"
           />
         </div>
 
@@ -67,30 +67,31 @@ export default function Sign() {
           {/* Right Form */}
           <div
             className="w-1/2 px-12 pb-12 pt-6 flex flex-col justify-center items-center"
-            style={{ transform: "translateY(100px)" }}
+            style={{ transform: "translateY(91px)" }}
           >
             <Container>
               <div className="w-full" style={{ width: "500px" }}>
                 {/* Toggle Buttons */}
-                <div className="flex justify-center mt-4 mb-8" style={{ transform: "translateY(-50px)" }}>
-                  <div className="relative w-[375px] h-[62px] bg-[#EBDBC4] rounded-full flex items-center justify-between px-2 border border-[#EBDBC4]">
+                <div className="flex justify-center mt-12 mb-8 -translate-y-[70px]">
+                  <div className="bg-[#EBDBC4] rounded-full w-[500px] h-[60px] flex items-center relative shadow-inner">
                     
-                    {/* Log in */}
+                    {/* White pill background - positioned for Sign up tab */}
+                    <div className="absolute right-[5px] top-1 w-[248px] h-[52px] bg-[#F7F7F7] rounded-full shadow-lg"></div>
+
+                    {/* Log in tab */}
                     <a
                       href="/login"
-                      className="flex-1 text-[#065F2B] text-xl font-bold underline text-center pl-14 z-10"
+                      className="flex-1 text-[#065F2B] text-[30px] font-extrabold text-center z-10 no-underline"
                     >
                       Log in
                     </a>
 
-                    {/* Sign up (active) */}
+                    {/* Sign up tab (active) */}
                     <div className="flex-1 relative flex justify-center items-center z-10">
-                      <div className="absolute w-[180px] h-[56px] bg-[#F7F7F7] rounded-full z-0 transition-all duration-300 ease-in-out"></div>
-                      <div className="relative text-[#065F2B] text-[22px] font-extrabold text-center z-10">
+                      <span className="text-[#065F2B] text-[30px] font-extrabold text-center whitespace-nowrap">
                         Sign up
-                      </div>
+                      </span>
                     </div>
-                    
                   </div>
                 </div>
 
@@ -99,55 +100,50 @@ export default function Sign() {
                   onSubmit={handleSignUp}
                   className="w-full space-y-[40px] flex flex-col"
                 >
-                  <input
+                  <Input
                     type="text"
                     placeholder="Enter your full name"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-0 border-b-2 border-[#065F2B] pb-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#065F2B]"
                   />
-                  <input
+                  <Input
                     type="tel"
                     placeholder="Enter your phone number"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-0 border-b-2 border-[#065F2B] pb-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#065F2B]"
                   />
-                  <input
+                  <Input
                     type="email"
                     placeholder="Enter your email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-0 border-b-2 border-[#065F2B] pb-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#065F2B]"
                   />
-                  <input
+                  <Input
                     type="password"
                     placeholder="Enter password"
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-0 border-b-2 border-[#065F2B] pb-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#065F2B]"
                   />
-                  <input
+                  <Input
                     type="password"
                     placeholder="Confirm password"
                     name="confirmPassword"
                     value={formData.confirmPassword}
                     onChange={handleChange}
-                    className="w-full bg-transparent border-0 border-b-2 border-[#065F2B] pb-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:border-[#065F2B]"
                   />
 
                   {/* Button */}
                   <div className="mt-2">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-[#F7F7F7] rounded-full transform translate-x-2 translate-y-2"></div>
+                      <div className="absolute inset-0 bg-[#065F2B] text-black rounded-full transform translate-x-2 translate-y-2"></div>
                       <Button
                         type="submit"
                         variant="primary"
-                        className="relative w-full bg-[#065F2B] hover:bg-[#054520] text-[#F7F7F7] rounded-full shadow-sm py-4 text-[25px] font-black"
+                        className= "text-[25px]  bg-[#065F2B] text-[#F7F7F7]" 
                       >
                         Sign Up
                       </Button>
