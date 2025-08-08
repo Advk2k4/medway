@@ -109,7 +109,7 @@ export default function Login() {
                 value={formData.password}
                 onChange={handleChange}
               />
-              <Button className="text-[25px]  bg-[#065F2B] text-[#F7F7F7]" type="submit">
+              <Button className="text-[25px] text-[#F7F7F7]" type="submit">
                 Log in
               </Button>
             </form>

@@ -54,7 +54,7 @@ export default function Sign() {
         </div>
 
         {/* Container */}
-        <div className="w-full flex rounded-lg overflow-hidden shadow-xl bg-white py-12 px-6 mt-10">
+        <div className="w-full flex rounded-lg overflow-hidden bg-white py-12 px-6 mt-10">
           {/* Left Image */}
           <div className="w-1/2 bg-[#F7F7F7] flex items-center justify-center">
             <img

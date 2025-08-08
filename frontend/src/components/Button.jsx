@@ -6,7 +6,7 @@ const Button = ({ children, variant = "primary", className= "", ...props }) => {
   };
   return (
     <button
-      className={`${styles[variant]} text-xl font-semibold py-[16px] px-12 rounded-[30px] w-full transition-colors duration-200 ${className}`}
+    className={`bg-[#065F2B] text-xl hover:bg-[#054a23] font-semibold py-[16px] px-12 rounded-[30px] w-full transition-colors duration-200 outline-none ring-0 shadow-none focus:shadow-none ${className}`}
       {...props}
     >
       {children}
