@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
-import Container from "../components/Container";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import AuthTabs from "../components/AuthTabs";
 
 export default function Sign() {
   const [formData, setFormData] = useState({
@@ -16,20 +15,15 @@ export default function Sign() {
   });
 
   const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
-
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-
     try {
       await createUserWithEmailAndPassword(auth, formData.email, formData.password);
       alert("Account created successfully!");
@@ -39,120 +33,74 @@ export default function Sign() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F7F7] flex justify-center items-center px-4 py-10">
-      <div className="w-full max-w-6xl relative">
-        {/* Logo */}
-        <div
-          className="absolute top-0 right-0 -mt-16 z-10 w-1/2 flex justify-end"
-          style={{ transform: "translate(700px,12px)" }}
-        >
+    <div className="min-h-screen bg-[#F7F7F7]">
+      <div className="mx-auto grid min-h-screen w-full max-w-7xl grid-rows-[auto,1fr] px-4 py-8 md:grid-cols-2 md:grid-rows-1 md:gap-8">
+        {/* Left illustration */}
+        <div className="relative hidden items-center justify-center md:flex">
           <img
-            src="logo.png"
-            alt="Medway Logo"
-            className="w-[642px] h-auto object-contain"
+            src="login.png"
+            alt="Signup illustration"
+            className="h-auto w-full max-w-[720px] object-contain"
           />
         </div>
 
-        {/* Container */}
-        <div className="w-full flex rounded-lg overflow-hidden bg-white py-12 px-6 mt-10">
-          {/* Left Image */}
-          <div className="w-1/2 bg-[#F7F7F7] flex items-center justify-center">
-            <img
-              src="login.png"
-              alt="Signup illustration"
-              className="w-[90%] h-[90%] object-contain"
-            />
+        {/* Right column */}
+        <div className="flex flex-col items-center justify-center">
+          {/* Logo */}
+          <div className="mb-6 flex w-full max-w-md justify-center md:justify-end">
+            <img src="logo.png" alt="Medway Logo" className="h-12 w-auto object-contain" />
           </div>
 
-          {/* Right Form */}
-          <div
-            className="w-1/2 px-12 pb-12 pt-6 flex flex-col justify-center items-center"
-            style={{ transform: "translateY(91px)" }}
+          {/* Tabs */}
+          <div className="mb-8 flex w-full max-w-md justify-center">
+            <AuthTabs />
+          </div>
+
+          {/* Form */}
+          <form
+            onSubmit={handleSignUp}
+            className="w-full max-w-md space-y-6 rounded-2xl bg-white p-6 shadow-sm md:bg-transparent md:p-0 md:shadow-none"
           >
-            <Container>
-              <div className="w-full" style={{ width: "500px" }}>
-                {/* Toggle Buttons */}
-                <div className="flex justify-center mt-12 mb-8 -translate-y-[70px]">
-                  <div className="bg-[#EBDBC4] rounded-full w-[500px] h-[60px] flex items-center relative shadow-inner">
-                    
-                    {/* White pill background - positioned for Sign up tab */}
-                    <div className="absolute right-[5px] top-1 w-[248px] h-[52px] bg-[#F7F7F7] rounded-full shadow-lg"></div>
+            <Input
+              type="text"
+              placeholder="Enter your full name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
+            <Input
+              type="tel"
+              placeholder="Enter your phone number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <Input
+              type="password"
+              placeholder="Enter password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <Input
+              type="password"
+              placeholder="Confirm password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+            />
 
-                    {/* Log in tab */}
-                    <a
-                      href="/login"
-                      className="flex-1 text-[#065F2B] text-[30px] font-extrabold text-center z-10 no-underline"
-                    >
-                      Log in
-                    </a>
-
-                    {/* Sign up tab (active) */}
-                    <div className="flex-1 relative flex justify-center items-center z-10">
-                      <span className="text-[#065F2B] text-[30px] font-extrabold text-center whitespace-nowrap">
-                        Sign up
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Form */}
-                <form
-                  onSubmit={handleSignUp}
-                  className="w-full space-y-[40px] flex flex-col"
-                >
-                  <Input
-                    type="text"
-                    placeholder="Enter your full name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    type="password"
-                    placeholder="Enter password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                  />
-                  <Input
-                    type="password"
-                    placeholder="Confirm password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                  />
-
-                  {/* Button */}
-                  <div className="mt-2">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-[#065F2B] text-black rounded-full transform translate-x-2 translate-y-2"></div>
-                      <Button
-                        type="submit"
-                        variant="primary"
-                        className= "text-[25px]  bg-[#065F2B] text-[#F7F7F7]" 
-                      >
-                        Sign Up
-                      </Button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </Container>
-          </div>
+            <Button type="submit" className="text-[18px] md:text-[20px] text-[#F7F7F7]">
+              Sign Up
+            </Button>
+          </form>
         </div>
       </div>
     </div>
