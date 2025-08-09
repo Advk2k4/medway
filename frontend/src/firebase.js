@@ -1,18 +1,16 @@
-// src/firebase.js
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD6WmDWEEagksGXVlbr-ZMb8EMioCqeCdk",
-  authDomain: "medway-cb114.firebaseapp.com",
-  projectId: "medway-cb114",
-  storageBucket: "medway-cb114.appspot.com",
-  messagingSenderId: "34045703757",
-  appId: "1:34045703757:web:be8cd975a2671edc594e04",
-  measurementId: "G-KBYFJMHBHM"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
