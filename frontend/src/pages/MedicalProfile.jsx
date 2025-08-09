@@ -37,7 +37,7 @@ export default function MedicalProfile() {
   return (
     <div className="min-h-screen bg-[#F7F7F7] py-8">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6 max-w-[900px] mx-auto">
+      <div className="flex justify-between items-center mb-6 px-4">
         <img src="logo.png" alt="Medway Logo" className="w-[372px] h-[137px]" />
         <img src="avatar.png" alt="Profile" className="h-[68px] w-[68px] rounded-full" />
       </div>
