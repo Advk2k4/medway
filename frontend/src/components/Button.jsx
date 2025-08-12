@@ -25,6 +25,7 @@ const Button = ({
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   return (
+
     <button className={classes} disabled={disabled || loading} {...props}>
       {loading ? (
         <div className="flex items-center justify-center space-x-2">
@@ -48,6 +49,7 @@ const Button = ({
       ) : (
         children
       )}
+
     </button>
   );
 };

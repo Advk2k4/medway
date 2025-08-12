@@ -40,17 +40,20 @@ export default function Sign() {
   };
 
   return (
+
     <div className="min-h-screen bg-[#F7F7F7] flex items-center justify-center px-6 py-10">
       <div className="w-full max-w-[1500px] bg-white rounded-3xl shadow-sm overflow-hidden">
         <div className="grid grid-cols-12">
           {/* LEFT: Illustration */}
           <div className="col-span-6 bg-[#F7F7F7] flex items-center justify-center p-8 xl:p-14">
+
             <img
               src="/login.png"
               alt="Medical Consultation"
               className="w-full max-w-[760px] h-auto object-contain"
             />
           </div>
+
 
           {/* RIGHT: Logo → Tabs → Form (mirrors Login.jsx) */}
           <div className="col-span-6 flex flex-col items-center justify-start p-6 xl:p-16">
@@ -63,12 +66,14 @@ export default function Sign() {
               />
             </div>
 
+
             {/* Tabs (same width as form) */}
             <div className="w-full mb-8 mt-[30px]">
               <div className="w-full max-w-[560px] mx-auto">
                 <AuthTabs size="large" />
               </div>
             </div>
+
 
             {/* Form (same width and spacing as Login.jsx) */}
             <form
@@ -121,6 +126,7 @@ export default function Sign() {
                   className="px-4"
                   required
                 />
+
               </div>
 
               <Button
