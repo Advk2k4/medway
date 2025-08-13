@@ -31,10 +31,10 @@ export default function Sign() {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
   const handleSignUp = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
+
 
     setIsLoading(true);
     try {
@@ -52,31 +52,94 @@ export default function Sign() {
         <div className="grid grid-cols-12">
           {/* LEFT: Illustration */}
           <div className="col-span-6 bg-[#F7F7F7] flex items-center justify-center p-8 xl:p-14">
-            <img src="/login.png" alt="Signup illustration" className="w-full max-w-[760px] h-auto object-contain" />
+            <img
+              src="/login.png"
+              alt="Medical Consultation"
+              className="w-full max-w-[760px] h-auto object-contain"
+            />
           </div>
 
-          {/* RIGHT: Logo → Tabs → Form */}
-          <div className="col-span-6 flex flex-col items-center justify-center p-6 xl:p-16">
-            {/* Logo - Centered */}
-            <div className="w-full flex justify-center mb-8">
-              <img src="/logo.png" alt="Medway Logo" className="h-20 w-auto object-contain" />
+
+          {/* RIGHT: Logo → Tabs → Form (mirrors Login.jsx) */}
+          <div className="col-span-6 flex flex-col items-center justify-start p-6 xl:p-16">
+            {/* Logo */}
+            <div className="w-full flex justify-center mb-6 mt-4">
+              <img
+                src="/logo.png"
+                alt="Medway Logo"
+                className="h-24 w-auto object-contain"
+              />
             </div>
 
-            {/* Tabs - Centered */}
-            <div className="w-full mb-12">
-              <AuthTabs className="max-w-[500px] mx-auto" size="large" />
+
+            {/* Tabs (same width as form) */}
+            <div className="w-full mb-8 mt-[30px]">
+              <div className="w-full max-w-[560px] mx-auto">
+                <AuthTabs size="large" />
+              </div>
             </div>
 
-            {/* Form - Centered */}
-            <form onSubmit={handleSignUp} className="w-full max-w-[500px] space-y-6">
-              <Input type="text" placeholder="Enter your full name" name="name" value={formData.name} onChange={handleChange} error={errors.name} required />
-              <Input type="tel" placeholder="Enter your phone number" name="phone" value={formData.phone} onChange={handleChange} error={errors.phone} required />
-              <Input type="email" placeholder="Enter your email" name="email" value={formData.email} onChange={handleChange} error={errors.email} required />
-              <Input type="password" placeholder="Enter password" name="password" value={formData.password} onChange={handleChange} error={errors.password} required />
-              <Input type="password" placeholder="Confirm password" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} error={errors.confirmPassword} required />
 
-              <Button type="submit" className="text-[20px]" loading={isLoading}>
-                Sign Up
+            {/* Form (same width and spacing as Login.jsx) */}
+            <form
+              onSubmit={handleSignUp}
+              className="w-full max-w-[560px] mx-auto flex flex-col min-h-[500px]"
+            >
+              <div className="flex flex-col gap-10 justify-between mt-[40px]">
+                <Input
+                  placeholder="Enter your full name"
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="px-4"
+                  required
+                />
+                <Input
+                  placeholder="Enter your phone number"
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="px-4"
+                  required
+                />
+                <Input
+                  placeholder="Enter your email"
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="px-4"
+                  required
+                />
+                <Input
+                  placeholder="Enter Password"
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="px-4"
+                  required
+                />
+                <Input
+                  placeholder="Confirm Password"
+                  type="password"
+                  name="confirmPassword"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  className="px-4"
+                  required
+                />
+
+              </div>
+
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px] disabled:opacity-70"
+              >
+                {isLoading ? "Creating account..." : "Sign up"}
               </Button>
             </form>
           </div>

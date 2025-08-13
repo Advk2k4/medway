@@ -15,18 +15,15 @@ export default function AuthTabs({ className = "" }) {
           w-[min(92%,640px)] h-[clamp(58px,6.8vw,66px)]
         "
       >
-        {/* WHITE sliding pill with breathing space */}
+        {/* Sliding pill */}
         <div
           aria-hidden="true"
           className={`
-            absolute z-10 /* <-- keeps pill above beige */
-            top-[6px]
-            bg-[#F7F7F7]
-            h-[calc(100%-12px)]
-            w-[calc(50%-12px)]
-            rounded-full bg-white
+            absolute z-10 top-[6px]
+            h-[calc(100%-12px)] w-[calc(50%-12px)]
+            rounded-full bg-[#F7F7F7]
             shadow-[0_6px_0_rgba(0,0,0,0.15)]
-            transition-transform duration-300 ease-out
+            transition-[left] duration-300 ease-out
             ${isLogin ? "left-[6px]" : "left-[calc(50%+6px)]"}
           `}
         />

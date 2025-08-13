@@ -1,3 +1,16 @@
+const Button = ({
+  children,
+  variant = "primary",
+  className = "",
+  disabled = false,
+  loading = false,
+  ...props
+}) => {
+  const baseClasses = `
+    font-bold text-xl py-5 px-10 rounded-[30px] w-full transition-all duration-200
+    outline-none ring-0 shadow-none focus:shadow-none disabled:opacity-50
+    disabled:cursor-not-allowed
+  `;
 
 const Button = ({ 
   children, 
