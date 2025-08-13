@@ -15,6 +15,7 @@ export default function AuthTabs({ className = "" }) {
           w-[min(92%,640px)] h-[clamp(58px,6.8vw,66px)]
         "
       >
+<<<<<<< HEAD
         {/* Sliding pill */}
         <div
           aria-hidden="true"
@@ -24,6 +25,20 @@ export default function AuthTabs({ className = "" }) {
             rounded-full bg-[#F7F7F7]
             shadow-[0_6px_0_rgba(0,0,0,0.15)]
             transition-[left] duration-300 ease-out
+=======
+        {/* WHITE sliding pill with breathing space */}
+        <div
+          aria-hidden="true"
+          className={`
+            absolute z-10 /* <-- keeps pill above beige */
+            top-[6px]
+            bg-[#F7F7F7]
+            h-[calc(100%-12px)]
+            w-[calc(50%-12px)]
+            rounded-full bg-white
+            shadow-[0_6px_0_rgba(0,0,0,0.15)]
+            transition-transform duration-300 ease-out
+>>>>>>> 32291c8 (Login, AuthTabs and Home)
             ${isLogin ? "left-[6px]" : "left-[calc(50%+6px)]"}
           `}
         />
@@ -35,7 +50,11 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={isLogin}
             tabIndex={isLogin ? 0 : -1}
+<<<<<<< HEAD
             className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
+=======
+            className="flex items-center justify-center text-[#065F2B] no-underline"
+>>>>>>> 32291c8 (Login, AuthTabs and Home)
           >
             Log in
           </Link>
@@ -44,7 +63,11 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={!isLogin}
             tabIndex={!isLogin ? 0 : -1}
+<<<<<<< HEAD
             className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
+=======
+            className="flex items-center justify-center text-[#065F2B] no-underline"
+>>>>>>> 32291c8 (Login, AuthTabs and Home)
           >
             Sign up
           </Link>

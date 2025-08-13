@@ -259,7 +259,7 @@ const healthFields = [
                     type={type}
                     value={formData[name]}
                     onChange={handleChange}
-                    options={options} // ✅ pass the correct options
+                    options={options} // pass the correct options
                   />
                 ))}
               </div>

@@ -13,5 +13,5 @@ html, body, #root {
   
   /* Optional: saner box model */
   *, *::before, *::after {
-    box-sizing: border-box;
-}
+    box-sizing: border-box;
+  }
