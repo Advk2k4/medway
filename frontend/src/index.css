@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background: #F7F7F7; /* your app’s page background */
+  }
+  
+  /* Optional: saner box model */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
