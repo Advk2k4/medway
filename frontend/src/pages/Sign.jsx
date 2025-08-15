@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
 import Input from "../components/Input";
 import Button from "../components/Button";
 import AuthTabs from "../components/AuthTabs";
@@ -15,38 +14,44 @@ export default function Sign() {
     confirmPassword: "",
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState({});
 
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
+  };
 
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
   const handleSignUp = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
 
     setIsLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, formData.email, formData.password);
-      alert("Account created successfully!");
-      // TODO: optionally route to dashboard or login
-    } catch (err) {
-      alert(err.message);
+    } catch (error) {
+      console.error("Sign up error:", error.message);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-
     <div className="min-h-screen bg-[#F7F7F7] flex items-center justify-center px-6 py-10">
       <div className="w-full max-w-[1500px] bg-white rounded-3xl shadow-sm overflow-hidden">
         <div className="grid grid-cols-12">
           {/* LEFT: Illustration */}
           <div className="col-span-6 bg-[#F7F7F7] flex items-center justify-center p-8 xl:p-14">
-
             <img
               src="/login.png"
               alt="Medical Consultation"

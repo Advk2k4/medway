@@ -6,7 +6,6 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import AuthTabs from "../components/AuthTabs";
 
-
 export default function Login() {
   const [formData, setFormData] = useState({ 
     email: "", 
@@ -24,7 +23,6 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
     setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
@@ -34,7 +32,6 @@ export default function Login() {
   };
 
   return (
-
     <div className="min-h-screen bg-[#F7F7F7] flex items-center justify-center px-6 py-10">
       <div className="w-full max-w-[1500px] bg-white rounded-3xl shadow-sm overflow-hidden">
         <div className="grid grid-cols-12">
@@ -63,7 +60,7 @@ export default function Login() {
     onSubmit={handleLogin}
     className="w-full max-w-[560px] mx-auto flex flex-col min-h-[500px]"
   >
-    <div className="flex flex-col gap-10 justify-between mt-[40px]">
+    <div className="flex flex-col gap-[30px] justify-between mt-[40px]">
     <Input
       placeholder="Enter your phone number"
       type="tel"
@@ -93,12 +90,10 @@ export default function Login() {
     />
   </div>
 
-
 <Button type="submit" className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px]">
   Log in
 </Button>
 </form>
-
           </div>
         </div>
       </div>

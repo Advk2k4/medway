@@ -35,7 +35,7 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={isLogin}
             tabIndex={isLogin ? 0 : -1}
-            className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
+            className="flex items-center justify-center text-[#065F2B] no-underline"
           >
             Log in
           </Link>
@@ -44,7 +44,7 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={!isLogin}
             tabIndex={!isLogin ? 0 : -1}
-            className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
+            className="flex items-center justify-center text-[#065F2B] no-underline"
           >
             Sign up
           </Link>
