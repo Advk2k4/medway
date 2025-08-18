@@ -15,6 +15,7 @@ export default function AuthTabs({ className = "" }) {
           w-[min(92%,640px)] h-[clamp(58px,6.8vw,66px)]
         "
       >
+
         {/* Sliding pill */}
         <div
           aria-hidden="true"
@@ -35,7 +36,7 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={isLogin}
             tabIndex={isLogin ? 0 : -1}
-            className="flex items-center justify-center text-[#065F2B] no-underline"
+            className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
           >
             Log in
           </Link>
@@ -44,7 +45,7 @@ export default function AuthTabs({ className = "" }) {
             role="tab"
             aria-selected={!isLogin}
             tabIndex={!isLogin ? 0 : -1}
-            className="flex items-center justify-center text-[#065F2B] no-underline"
+            className="flex items-center justify-center text-[#065F2B] no-underline transition-colors"
           >
             Sign up
           </Link>
