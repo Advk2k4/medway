@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-
 import Input from "../components/Input";
 import Button from "../components/Button";
 import AuthTabs from "../components/AuthTabs";
@@ -15,22 +14,25 @@ export default function Sign() {
     confirmPassword: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-<<<<<<< HEAD
-=======
   const [errors, setErrors] = useState({});
->>>>>>> 32291c8 (Login, AuthTabs and Home)
-
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-<<<<<<< HEAD
-
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+    if (!formData.email.trim()) newErrors.email = "Email is required";
+    if (!formData.password) newErrors.password = "Password is required";
+    if (formData.password !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
   const handleSignUp = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       return;
     }
-=======
     if (errors[e.target.name]) setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
@@ -48,37 +50,26 @@ export default function Sign() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
->>>>>>> 32291c8 (Login, AuthTabs and Home)
-
     setIsLoading(true);
     try {
       await createUserWithEmailAndPassword(auth, formData.email, formData.password);
-<<<<<<< HEAD
       alert("Account created successfully!");
       // TODO: optionally route to dashboard or login
     } catch (err) {
       alert(err.message);
-=======
     } catch (error) {
       console.error("Sign up error:", error.message);
->>>>>>> 32291c8 (Login, AuthTabs and Home)
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-<<<<<<< HEAD
-
-=======
->>>>>>> 32291c8 (Login, AuthTabs and Home)
     <div className="min-h-screen bg-[#F7F7F7] flex items-center justify-center px-6 py-10">
       <div className="w-full max-w-[1500px] bg-white rounded-3xl shadow-sm overflow-hidden">
         <div className="grid grid-cols-12">
           {/* LEFT: Illustration */}
           <div className="col-span-6 bg-[#F7F7F7] flex items-center justify-center p-8 xl:p-14">
-<<<<<<< HEAD
-
             <img
               src="/login.png"
               alt="Medical Consultation"
@@ -167,7 +158,6 @@ export default function Sign() {
                 className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px] disabled:opacity-70"
               >
                 {isLoading ? "Creating account..." : "Sign up"}
-=======
             <img src="/login.png" alt="Signup illustration" className="w-full max-w-[760px] h-auto object-contain" />
           </div>
 
@@ -193,7 +183,6 @@ export default function Sign() {
 
               <Button type="submit" className="text-[20px]" loading={isLoading}>
                 Sign Up
->>>>>>> 32291c8 (Login, AuthTabs and Home)
               </Button>
             </form>
           </div>
