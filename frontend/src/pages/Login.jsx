@@ -46,6 +46,7 @@ export default function Login() {
   <div className="w-full flex justify-center mb-6 mt-4">
     <img src="/logo.png" alt="Medway Logo" className="h-24 w-auto object-contain" />
   </div>
+
   {/* Tabs (centered, same width as form) */}
   <div className="w-full mb-8 mt-[30px]">
     <div className="w-full max-w-[560px] mx-auto">
@@ -58,7 +59,7 @@ export default function Login() {
     onSubmit={handleLogin}
     className="w-full max-w-[560px] mx-auto flex flex-col min-h-[500px]"
   >
-    <div className="flex flex-col gap-[30px] justify-between mt-[40px]">
+    <div className="flex flex-col gap-10 justify-between mt-[40px]">
     <Input
       placeholder="Enter your phone number"
       type="tel"
@@ -88,51 +89,6 @@ export default function Login() {
     />
   </div>
 
-<Button type="submit" className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px]">
-  Log in
-</Button>
-</form>
-  {/* Tabs (centered, same width as form) */}
-  <div className="w-full mb-8 mt-[30px]">
-    <div className="w-full max-w-[560px] mx-auto">
-      <AuthTabs size="large" />
-    </div>
-  </div>
-
-  {/* Form (centered, same width as tabs) */}
-  <form
-    onSubmit={handleLogin}
-    className="w-full max-w-[560px] mx-auto flex flex-col min-h-[500px]"
-  >
-    <div className="flex flex-col gap-[30px] justify-between mt-[40px]">
-    <Input
-      placeholder="Enter your phone number"
-      type="tel"
-      name="phone"
-      value={formData.phone}
-      onChange={handleChange}
-      className="px-4"
-      required
-    />
-    <Input
-      placeholder="Enter your email"
-      type="email"
-      name="email"
-      value={formData.email}
-      onChange={handleChange}
-      className="px-4"
-      required
-    />
-    <Input
-      placeholder="Enter Password"
-      type="password"
-      name="password"
-      value={formData.password}
-      onChange={handleChange}
-      className="px-4"
-      required
-    />
-  </div>
 
 <Button type="submit" className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px]">
   Log in
