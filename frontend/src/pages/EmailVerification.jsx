@@ -92,7 +92,7 @@ export default function EmailVerification() {
       <div style={{ width: '50%', background: '#1A5239', position: 'fixed', top: 0, bottom: 0, right: 0 }}></div>
       
       <div style={{ position: 'relative', zIndex: 10, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', width: '100%', padding: '0 1rem' }}>
-        <div className="bg-[#F8F5F0] rounded-3xl shadow-2xl px-12 py-24 max-w-2xl w-full" style={{ minHeight: '80vh' }}>
+        <div className="bg-[#F8F5F0] rounded-3xl shadow-2xl w-full" style={{ minHeight: '80vh', paddingLeft: '5rem', paddingRight: '5rem', paddingTop: '6rem', paddingBottom: '6rem', maxWidth: '80rem' }}>
           <div className="flex justify-center mb-10">
             <div className="w-48 h-36 flex items-center justify-center">
               <svg 
@@ -131,7 +131,7 @@ export default function EmailVerification() {
             Enter the 6-digit code we sent to your email address to verify your new Medway account.
           </p>
 
-          <div className="flex justify-center gap-3 mb-8">
+          <div className="flex justify-center mb-8" style={{ gap: '1rem' }}>
             {code.map((digit, index) => (
               <input
                 key={index}
@@ -143,8 +143,18 @@ export default function EmailVerification() {
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 onPaste={handlePaste}
-                className="w-12 h-16 text-center text-2xl font-semibold border-2 border-gray-400 rounded-xl focus:border-[#1A5239] focus:outline-none focus:ring-2 focus:ring-[#1A5239] focus:ring-opacity-50 transition-all bg-[#EBE3D5]"
-              />
+                style={{
+                    width: '3rem',
+                    height: '4rem',
+                    fontSize: '1.5rem',
+                    textAlign: 'center',
+                    fontWeight: '600',
+                    border: '2px solid #9ca3af',
+                    borderRadius: '0.75rem',
+                    background: '#EBE3D5'
+                }}
+                className="focus:border-[#1A5239] focus:outline-none focus:ring-2 focus:ring-[#1A5239] focus:ring-opacity-50 transition-all"
+                />
             ))}
           </div>
 
@@ -156,21 +166,43 @@ export default function EmailVerification() {
 
           <div className="flex justify-center mb-6">
             <button
-              onClick={handleVerify}
-              disabled={isVerifying}
-              className="bg-[#1A5239] text-white px-24 py-5 rounded-xl text-2xl font-semibold hover:bg-[#245c42] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg w-full max-w-md"
-            >
-              {isVerifying ? 'Verifying...' : 'Verify & Continue'}
-            </button>
+                onClick={handleVerify}
+                disabled={isVerifying}
+                style={{ 
+                    background: '#1A5239',
+                    color: 'white',
+                    padding: '1rem 3rem',
+                    fontSize: '1rem',
+                    borderRadius: '1rem',
+                    fontWeight: '600',
+                    border: 'none',
+                    cursor: 'pointer',
+                    boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                    marginTop: '2rem'
+                }}
+                onMouseOver={(e) => e.target.style.background = '#245c42'}
+                onMouseOut={(e) => e.target.style.background = '#1A5239'}
+                >
+                {isVerifying ? 'Verifying...' : 'Verify & Continue'}
+                </button>
           </div>
 
           <div className="text-center">
             <button 
-              className="text-[#1A5239] hover:underline text-lg font-medium"
-              onClick={handleResend}
-            >
-              Didn't receive the code? Resend
-            </button>
+                onClick={handleResend}
+                style={{
+                    color: '#1A5239',
+                    fontSize: '0.75rem',
+                    fontWeight: '500',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    marginTop: '1.5rem'
+                }}
+                >
+                Didn't receive the code? Resend
+                </button>
           </div>
         </div>
       </div>
