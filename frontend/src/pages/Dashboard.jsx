@@ -7,7 +7,7 @@ export default function Dashboard() {
     <div style={{ minHeight: '100vh', background: '#F7F7F7', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
       <header style={{ 
-        background: '#F7F7F7',  // CHANGED THIS LINE
+        background: '#F7F7F7',
         padding: '1rem 3rem',
         borderBottom: '1px solid #e5e7eb',
         display: 'flex',
