@@ -5,6 +5,8 @@ import Sign from "./pages/Sign.jsx";
 import MedicalProfile from "./pages/MedicalProfile.jsx";
 import EmailVerification from "./pages/EmailVerification.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
+import Labs from "./pages/Labs.jsx";
+
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Route path="/medical-profile" element={<MedicalProfile />} />
       <Route path="/email-verification" element={<EmailVerification />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/labs" element={<Labs />} />
+     
     </Routes>
   );
 }
