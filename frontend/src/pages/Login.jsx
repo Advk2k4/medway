@@ -4,7 +4,6 @@ import { auth } from "../firebase";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import AuthTabs from "../components/AuthTabs";
-
 export default function Login() {
   const [formData, setFormData] = useState({ 
     email: "", 
