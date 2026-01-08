@@ -1,52 +1,65 @@
 import { Link, useLocation } from "react-router-dom";
 
-export default function AuthTabs({ className = "" }) {
+export default function AuthTabs({
+  className = "",
+  leftLabel = "Log in",
+  rightLabel = "Sign up",
+  leftTo = "/login",
+  rightTo = "/sign",
+  ariaLabel = "Tabs",
+}) {
   const { pathname } = useLocation();
-  const isLogin = pathname.includes("/login");
+
+  // Determine which side is active based on current path
+  const isLeftActive =
+    pathname === leftTo || pathname.startsWith(leftTo + "/");
 
   return (
     <div className={`mt-4 ${className}`}>
       {/* Beige track */}
       <div
         role="tablist"
-        aria-label="Authentication tabs"
+        aria-label={ariaLabel}
         className="
           relative mx-auto select-none rounded-full bg-[#EBDBC4]
-          w-[min(92%,640px)] h-[clamp(58px,6.8vw,66px)]
+          w-full h-[clamp(58px,6.8vw,66px)]
         "
       >
-        {/* Sliding pill */}
+        {/* WHITE sliding pill */}
         <div
           aria-hidden="true"
           className={`
-            absolute z-10 top-[6px]
-            h-[calc(100%-12px)] w-[calc(50%-12px)]
+            absolute z-10
+            top-[6px]
+            h-[calc(100%-12px)]
+            w-[calc(50%-12px)]
             rounded-full bg-[#F7F7F7]
             shadow-[0_6px_0_rgba(0,0,0,0.15)]
-            transition-[left] duration-300 ease-out
-            ${isLogin ? "left-[6px]" : "left-[calc(50%+6px)]"}
+            transition-all duration-300 ease-out
+            ${isLeftActive ? "left-[6px]" : "left-[calc(50%+6px)]"}
           `}
         />
 
         {/* Tabs */}
         <div className="relative z-20 grid h-full grid-cols-2 text-[clamp(22px,2vw,28px)] font-extrabold tracking-[0.5px]">
           <Link
-            to="/login"
+            to={leftTo}
             role="tab"
-            aria-selected={isLogin}
-            tabIndex={isLogin ? 0 : -1}
+            aria-selected={isLeftActive}
+            tabIndex={isLeftActive ? 0 : -1}
             className="flex items-center justify-center text-[#065F2B] no-underline"
           >
-            Log in
+            {leftLabel}
           </Link>
+
           <Link
-            to="/sign"
+            to={rightTo}
             role="tab"
-            aria-selected={!isLogin}
-            tabIndex={!isLogin ? 0 : -1}
+            aria-selected={!isLeftActive}
+            tabIndex={!isLeftActive ? 0 : -1}
             className="flex items-center justify-center text-[#065F2B] no-underline"
           >
-            Sign up
+            {rightLabel}
           </Link>
         </div>
       </div>
