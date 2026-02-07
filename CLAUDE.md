@@ -44,7 +44,6 @@ All environment variables must be prefixed with `VITE_` to be accessible in the 
 - **Build Tool**: Vite 7
 - **Styling**: TailwindCSS 4.x with PostCSS
 - **Authentication**: Firebase Auth (email/password)
-- **Local Storage**: IndexedDB via the `idb` library
 - **Icons**: Lucide React
 
 ### Project Structure
