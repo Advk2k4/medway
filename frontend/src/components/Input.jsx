@@ -13,7 +13,7 @@ const Input = ({
 
   const baseClasses = `
   w-full max-w-[560px] bg-transparent text-gray-700 mt-[25px] placeholder-gray-500 text-[18px] lg:text-2xl
-  border-0 border-b-2 py-5 px-2 focus:outline-none transition-all duration-200
+  border-0 border-b-2 py-5 px-2 focus:outline-none items-center transition-all duration-200
   ${error ? 'border-red-500' : 'border-[#065F2B]'}
   ${isFocused ? 'border-[#065F2B]' : ''}
   ${className}

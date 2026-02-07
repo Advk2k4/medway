@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import Input from "../components/Input";
 import Button from "../components/Button";
 import AuthTabs from "../components/AuthTabs";
-
 export default function Login() {
   const [formData, setFormData] = useState({ 
     email: "", 
@@ -60,7 +58,7 @@ export default function Login() {
     onSubmit={handleLogin}
     className="w-full max-w-[560px] mx-auto flex flex-col min-h-[500px]"
   >
-    <div className="flex flex-col gap-[30px] justify-between mt-[40px]">
+    <div className="flex flex-col gap-10 justify-between mt-[40px]">
     <Input
       placeholder="Enter your phone number"
       type="tel"
@@ -90,10 +88,12 @@ export default function Login() {
     />
   </div>
 
-<Button type="submit" className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px]">
-  Log in
+
+<Button type="submit" disabled={isLoading} className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px] disabled:opacity-70">
+  {isLoading ? "Logging in..." : "Log in"}
 </Button>
 </form>
+
           </div>
         </div>
       </div>
