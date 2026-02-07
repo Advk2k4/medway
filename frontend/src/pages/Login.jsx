@@ -89,8 +89,8 @@ export default function Login() {
   </div>
 
 
-<Button type="submit" className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px]">
-  Log in
+<Button type="submit" disabled={isLoading} className="w-full h-[65px] text-[#F7F7F7] text-[22px] font-bold mt-[70px] disabled:opacity-70">
+  {isLoading ? "Logging in..." : "Log in"}
 </Button>
 </form>
 
