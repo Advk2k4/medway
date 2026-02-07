@@ -51,17 +51,15 @@ All environment variables must be prefixed with `VITE_` to be accessible in the 
 
 ```
 medway/
-├── frontend/          # Main React application
-│   ├── src/
-│   │   ├── pages/     # Route pages: Home, Login, Sign, MedicalProfile
-│   │   ├── components/# Reusable components: AuthTabs, Button, Container, Input
-│   │   ├── firebase.js # Firebase initialization and auth export
-│   │   ├── App.jsx    # Route definitions
-│   │   └── main.jsx   # Application entry point
-│   ├── public/        # Static assets (images, etc.)
-│   └── package.json
-├── backend/           # Minimal backend (currently just placeholder server.js)
-└── client/            # Placeholder directory (currently just App.js)
+└── frontend/          # Main React application
+    ├── src/
+    │   ├── pages/     # Route pages: Home, Login, Sign, MedicalProfile
+    │   ├── components/# Reusable components: AuthTabs, Button, Container, Input
+    │   ├── firebase.js # Firebase initialization and auth export
+    │   ├── App.jsx    # Route definitions
+    │   └── main.jsx   # Application entry point
+    ├── public/        # Static assets (images, etc.)
+    └── package.json
 ```
 
 ### Key Application Flow
@@ -111,8 +109,7 @@ All styling uses Tailwind utility classes. Custom colors are defined inline.
 
 ## Notes for Development
 
-- The `backend/` and `client/` directories are minimal/placeholder and not actively used
-- The main application lives entirely in `frontend/`
+- The entire application lives in the `frontend/` directory
 - TailwindCSS is using version 4.x with PostCSS plugin
 - The medical profile form includes fields for: personal info, medical history, lifestyle habits, and emergency contacts
 - The application uses responsive design with clamp() functions for fluid typography and spacing
