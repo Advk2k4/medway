@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
-import Sign from "./pages/Sign.jsx";
-import MedicalProfile from "./pages/MedicalProfile.jsx";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Sign from "./pages/Sign";
+import MedicalProfile from "./pages/MedicalProfile";
 
 function App() {
   return (
