@@ -70,10 +70,10 @@ export default function EmailVerification() {
 
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
       console.log('Verifying code:', verificationCode);
       alert('Verification successful! Redirecting to medical profile...');
-    } catch (err) {
+    } catch {
       setError('Invalid verification code. Please try again.');
       setIsVerifying(false);
     }
